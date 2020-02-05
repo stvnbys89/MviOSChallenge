@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AdC-hR-yBZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pinboard View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PinboardViewController" id="BYZ-38-t0r" customClass="PinboardViewController" customModule="MindvalleyiOSChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XWx-m9-a8y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="6ZX-eU-kT8" customClass="PinboardCustomLayout" customModule="MindvalleyiOSChallenge" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PinboardCell" id="VYc-VH-dGz" customClass="PinboardCell" customModule="MindvalleyiOSChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rbB-YY-kFe">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="F9v-s6-Ou3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czi-Bs-EQ0">
+                                                    <rect key="frame" x="0.0" y="-30" width="50" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-40-f1V">
+                                                            <rect key="frame" x="10" y="20" width="30" height="40"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ya1-40-f1V" firstAttribute="top" secondItem="czi-Bs-EQ0" secondAttribute="top" constant="20" id="2hq-fs-YmN"/>
+                                                        <constraint firstItem="ya1-40-f1V" firstAttribute="leading" secondItem="czi-Bs-EQ0" secondAttribute="leading" constant="10" id="5lq-fc-Qvp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ya1-40-f1V" secondAttribute="bottom" constant="20" id="8Wb-bI-ONf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ya1-40-f1V" secondAttribute="trailing" constant="10" id="cjX-9V-WEW"/>
+                                                        <constraint firstAttribute="height" constant="80" id="hOE-dg-2gb"/>
+                                                    </constraints>
+                                                </view>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Jer-Vs-yJE">
+                                                    <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="F9v-s6-Ou3" secondAttribute="trailing" id="0kG-oj-KNN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jer-Vs-yJE" secondAttribute="bottom" constant="15" id="6JB-32-9X8"/>
+                                                <constraint firstItem="czi-Bs-EQ0" firstAttribute="leading" secondItem="rbB-YY-kFe" secondAttribute="leading" id="71l-CP-w0U"/>
+                                                <constraint firstItem="F9v-s6-Ou3" firstAttribute="leading" secondItem="rbB-YY-kFe" secondAttribute="leading" id="DE1-o9-Tkv"/>
+                                                <constraint firstAttribute="bottom" secondItem="czi-Bs-EQ0" secondAttribute="bottom" id="Jax-0a-sY0"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jer-Vs-yJE" secondAttribute="trailing" constant="15" id="Pa2-gk-TCY"/>
+                                                <constraint firstItem="F9v-s6-Ou3" firstAttribute="top" secondItem="rbB-YY-kFe" secondAttribute="top" id="afS-3p-kjB"/>
+                                                <constraint firstAttribute="bottom" secondItem="F9v-s6-Ou3" secondAttribute="bottom" id="dCd-iz-Ava"/>
+                                                <constraint firstAttribute="trailing" secondItem="czi-Bs-EQ0" secondAttribute="trailing" id="jBx-pJ-Vbr"/>
+                                                <constraint firstItem="Jer-Vs-yJE" firstAttribute="leading" secondItem="rbB-YY-kFe" secondAttribute="leading" constant="15" id="uMu-Pr-2rZ"/>
+                                                <constraint firstItem="Jer-Vs-yJE" firstAttribute="top" secondItem="rbB-YY-kFe" secondAttribute="top" constant="15" id="ySu-DL-lnZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="loadIndicator" destination="Jer-Vs-yJE" id="0DW-O2-SvI"/>
+                                            <outlet property="pinImage" destination="F9v-s6-Ou3" id="5qs-wQ-zGa"/>
+                                            <outlet property="pinTitle" destination="ya1-40-f1V" id="z5H-Ap-Pft"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="P8k-Vn-jgN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ktT-OP-12c"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XWx-m9-a8y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9lZ-yw-vuO"/>
+                            <constraint firstItem="XWx-m9-a8y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jjq-30-jeb"/>
+                            <constraint firstItem="XWx-m9-a8y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SxT-L2-UV6"/>
+                            <constraint firstItem="XWx-m9-a8y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eO0-SQ-WIa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ji7-fT-Ni7"/>
+                    <connections>
+                        <outlet property="pinboardCollectionView" destination="XWx-m9-a8y" id="8cl-Ra-yFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="188.83928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9HA-Jh-42F">
+            <objects>
+                <navigationController id="AdC-hR-yBZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pnn-Rr-5cR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cbI-f8-EXm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXM-c2-W36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="189"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_placeholder.png" width="480" height="480"/>
+    </resources>
+</document>
